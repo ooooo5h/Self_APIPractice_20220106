@@ -22,9 +22,6 @@ class LoginActivity : AppCompatActivity() {
             val inputEmail = edtEmail.text.toString()
             val inputPw = edtPassword.text.toString()
 
-            val retrofit = ServerAPI.getRetrofit()
-            val apiList = retrofit.create(APIList::class.java)
-
             apiList.postRequestLogin(inputEmail, inputPw).enqueue(object : Callback<BasicResponse>{
                 override fun onResponse(
                     call: Call<BasicResponse>,
