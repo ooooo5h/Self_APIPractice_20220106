@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
 //                        Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
 //                        ~~님 환영합니다로 바꿔보자
+                        
+                        val br = response.body()!!
+                        val loginUserNickname = br.data.user.nick_name
+                        Toast.makeText(this@MainActivity, "${loginUserNickname}님 환영합니다.", Toast.LENGTH_SHORT).show()
 
                     }
                     else {
