@@ -60,7 +60,7 @@ class SignUpActivity : AppCompatActivity() {
             val inputEmail = edtEmail.text.toString()
 
             val retrofit = ServerAPI.getRetrofit()
-            val apiList = retrofit.create(APIList::javaClass)
+            val apiList = retrofit.create(APIList::class.java)
 
             apiList.get
 
