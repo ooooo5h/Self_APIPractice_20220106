@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
                     response: Response<BasicResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+//                        ~~님 환영합니다로 바꿔보자
+
                     }
                     else {
                         Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
