@@ -67,7 +67,12 @@ class SignUpActivity : AppCompatActivity() {
                     call: Call<BasicResponse>,
                     response: Response<BasicResponse>
                 ) {
-
+                    if (response.isSuccessful) {
+                        txtEmailCheckResult.text = "사용해도 좋은 이메일입니다."
+                    }
+                    else {
+                        txtEmailCheckResult.text = "중복된 이메일입니다. 다시 입력해주세요."
+                    }
 
                 }
 
