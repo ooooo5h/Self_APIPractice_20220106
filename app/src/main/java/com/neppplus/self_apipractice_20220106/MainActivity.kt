@@ -1,5 +1,6 @@
 package com.neppplus.self_apipractice_20220106
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -51,6 +52,12 @@ class MainActivity : AppCompatActivity() {
 
             })
 
+        }
+
+        btnSignUp.setOnClickListener {
+
+            val myIntent = Intent(this, SignUpActivity::class.java)
+            startActivity(myIntent)
         }
     }
 }
