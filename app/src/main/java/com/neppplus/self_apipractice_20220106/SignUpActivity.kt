@@ -54,5 +54,16 @@ class SignUpActivity : AppCompatActivity() {
             })
 
         }
+
+        btnEmailCheck.setOnClickListener {
+
+            val inputEmail = edtEmail.text.toString()
+
+            val retrofit = ServerAPI.getRetrofit()
+            val apiList = retrofit.create(APIList::javaClass)
+
+            apiList.get
+
+        }
     }
 }
