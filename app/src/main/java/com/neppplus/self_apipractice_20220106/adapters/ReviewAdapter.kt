@@ -4,7 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.neppplus.self_apipractice_20220106.R
 import com.neppplus.self_apipractice_20220106.models.ReviewData
 
@@ -15,8 +18,17 @@ class ReviewAdapter(
 
     inner class MyViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
 
+        val imgThumbnail = row.findViewById<ImageView>(R.id.imgThumbnail)
+        val imgUserProfile = row.findViewById<ImageView>(R.id.imgUserProfile)
+        val txtUserNickname = row.findViewById<TextView>(R.id.txtUserNickname)
+        val txtReviewTitle = row.findViewById<TextView>(R.id.txtReviewTitle)
+
         fun bind(data: ReviewData) {
 
+            txtReviewTitle.text = data.title
+            txtUserNickname.text = data.user.nick_name
+            Glide.with(mContext).load(data.thumbnail_img).into(imgThumbnail)
+            Glide.with(mContext).load(data.user.profile_img).into(imgUserProfile)
 
         }
 
