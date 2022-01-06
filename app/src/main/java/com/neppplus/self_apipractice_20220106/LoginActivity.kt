@@ -36,6 +36,10 @@ class LoginActivity : BaseActivity() {
                         Toast.makeText(this@LoginActivity, "${loginUserNickname}님 환영합니다.", Toast.LENGTH_SHORT).show()
                         
 //                        val myIntent = Intent(this@LoginActivity) 로그인하고 메인화면으로 이동시킬건데 this가 2개 떠서 귀찮아
+                        val myIntent = Intent(mContext, MainActivity::class.java)
+                        startActivity(myIntent)
+
+                        finish()
 
                     }
                     else {
