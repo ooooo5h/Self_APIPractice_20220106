@@ -31,6 +31,8 @@ class MainActivity : BaseActivity() {
 
                     val br = response.body()!!
                     mReviewList.addAll(br.data.reviews)
+
+                    mReviewAdapter.notifyDataSetChanged()
                 }
 
             }
