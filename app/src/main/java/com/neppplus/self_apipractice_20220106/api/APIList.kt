@@ -2,6 +2,7 @@ package com.neppplus.self_apipractice_20220106.api
 
 import com.neppplus.self_apipractice_20220106.models.BasicResponse
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.http.*
 
 interface APIList {
@@ -32,5 +33,10 @@ interface APIList {
         @Query("type") type : String,
         @Query("value") value : String,
 ) : Call<BasicResponse>
+
+
+//    * 모든 리뷰 가져오기기
+    @GET("/review")
+    fun getRequestAllReview() : Call<BasicResponse>
 
 }
