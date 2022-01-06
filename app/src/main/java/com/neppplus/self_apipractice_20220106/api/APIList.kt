@@ -1,5 +1,6 @@
 package com.neppplus.self_apipractice_20220106.api
 
+import com.neppplus.self_apipractice_20220106.models.BasicResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -13,5 +14,5 @@ interface APIList {
     fun postRequestLogin(
         @Field("email") email : String,
         @Field("password") pw : String,
-) : Call
+) : Call<BasicResponse>
 }
