@@ -1,6 +1,7 @@
 package com.neppplus.self_apipractice_20220106.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.neppplus.self_apipractice_20220106.EditReviewActivity
 import com.neppplus.self_apipractice_20220106.R
 import com.neppplus.self_apipractice_20220106.models.ProductData
 import com.neppplus.self_apipractice_20220106.models.ReviewData
@@ -42,8 +44,11 @@ class ProductAdapter(
 
             btnWriteReview.setOnClickListener {
 
-                Toast.makeText(mContext, "리뷰버튼눌림", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(mContext, "리뷰버튼눌림", Toast.LENGTH_SHORT).show()
 
+                val myIntent = Intent(mContext, EditReviewActivity::class.java)
+                myIntent.putExtra("product", data)
+                mContext.startActivity(myIntent)
             }
 
 
