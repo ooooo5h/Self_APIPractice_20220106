@@ -8,6 +8,6 @@ class MyProfileActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_profile)
 
-        apiList.get
+        apiList.getRequestMyInfo(//토큰을 가져와야하는군)
     }
 }
