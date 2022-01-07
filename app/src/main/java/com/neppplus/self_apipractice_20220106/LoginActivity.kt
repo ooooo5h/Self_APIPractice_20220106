@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.neppplus.self_apipractice_20220106.api.APIList
 import com.neppplus.self_apipractice_20220106.api.ServerAPI
 import com.neppplus.self_apipractice_20220106.models.BasicResponse
+import com.neppplus.self_apipractice_20220106.utils.ContextUtil
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -34,7 +35,11 @@ class LoginActivity : BaseActivity() {
                         val br = response.body()!!
                         val loginUserNickname = br.data.user.nick_name
                         Toast.makeText(this@LoginActivity, "${loginUserNickname}님 환영합니다.", Toast.LENGTH_SHORT).show()
-                        
+
+//                        로그인에 성공 => 서버가 토큰을 발급해서 내려줌
+//                        보조기억장치에 토큰값을 저장하기
+                        ContextUtil.setToken(mContext, br.data.token)
+
 //                        val myIntent = Intent(this@LoginActivity) 로그인하고 메인화면으로 이동시킬건데 this가 2개 떠서 귀찮아
                         val myIntent = Intent(mContext, MainActivity::class.java)
                         startActivity(myIntent)
