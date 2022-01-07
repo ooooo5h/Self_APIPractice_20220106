@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.neppplus.self_apipractice_20220106.R
@@ -26,6 +28,9 @@ class ProductAdapter(
         val imgStoreLogo = row.findViewById<ImageView>(R.id.imgStoreLogo)
         val txtStoreName = row.findViewById<TextView>(R.id.txtStoreName)
 
+        val btnWriteReview = row.findViewById<Button>(R.id.btnWriteReview)  // 어댑터에서는 버튼id같은게 자동으로 못불러옴
+
+
         fun bind(data: ProductData) {
 
             txtStoreName.text = data.store.name
@@ -34,6 +39,13 @@ class ProductAdapter(
 
             Glide.with(mContext).load(data.imageURL).into(imgProduct)
             Glide.with(mContext).load(data.store.logoURL).into(imgStoreLogo)
+
+            btnWriteReview.setOnClickListener {
+
+                Toast.makeText(mContext, "리뷰버튼눌림", Toast.LENGTH_SHORT).show()
+
+            }
+
 
         }
 
