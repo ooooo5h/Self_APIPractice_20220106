@@ -41,8 +41,6 @@ interface APIList {
 
 //    * 내 정보 가져오기
     @GET("/user")
-    fun getRequestMyInfo(
-        @Header("X-Http-Token") token : String,
-    ) : Call<BasicResponse>
+    fun getRequestMyInfo() : Call<BasicResponse>
 
 }
