@@ -22,7 +22,7 @@ class ProductListActivity : BaseActivity() {
                 if (response.isSuccessful){
 
                     val br = response.body()!!
-                    mProductList.addAll((br.data.pro))
+                    mProductList.addAll((br.data.products))
                 }
 
             }
