@@ -58,4 +58,10 @@ interface APIList {
         @Field("tag_list") tagStr : String,
     ) : Call<BasicResponse>
 
+//    * 특정 리뷰 상세보기
+    @GET("/review/{review_id}")
+    fun getReqeustReviewDetail(
+        @Path("review_id") id : Int,
+    ) : Call<BasicResponse>
+
 }
