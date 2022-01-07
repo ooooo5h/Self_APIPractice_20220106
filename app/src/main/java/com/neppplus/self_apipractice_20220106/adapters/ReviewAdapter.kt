@@ -1,6 +1,7 @@
 package com.neppplus.self_apipractice_20220106.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.neppplus.self_apipractice_20220106.R
+import com.neppplus.self_apipractice_20220106.ViewReviewActivity
 import com.neppplus.self_apipractice_20220106.models.ReviewData
 
 class ReviewAdapter(
@@ -29,6 +31,13 @@ class ReviewAdapter(
             txtUserNickname.text = data.user.nick_name
             Glide.with(mContext).load(data.thumbnail_img).into(imgThumbnail)
             Glide.with(mContext).load(data.user.profile_img).into(imgUserProfile)
+
+            row.setOnClickListener {
+
+                val myIntent = Intent(mContext, ViewReviewActivity::class.java)
+                myIntent.putExtra("review", data)
+                mContext.startActivity(myIntent)
+            }
 
         }
 
